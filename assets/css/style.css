@@ -10,7 +10,7 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
+  padding: 4px 10px;
 }
 
 .jumbotron {
@@ -20,7 +20,11 @@ textarea{
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-/*ul.event-group*/
+ul.event-group {
+  min-height: 75px;
+  margin: 0;
+  list-style-type: none;
+}
 .description{
   white-space: pre-wrap;
 }
@@ -69,11 +73,8 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
-ul.event-group {
-  min-height: 75px;
-  margin: 0;
-  list-style-type: none;
-}.save-delete {
+
+.save-delete {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -109,8 +110,3 @@ ul.event-group {
   font-size: 14px;
   line-height: 22px;
 }
-/*save-delete*/
-/*save-delete i.fa-save
-/*theres a bunch 
-event-group
-events 

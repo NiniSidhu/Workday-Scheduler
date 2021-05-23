@@ -21,25 +21,25 @@ var hours = [hour8, hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour1
 
 //Fetches local Stoage 
 
-var event8 = JSON.parse(localStorage.getItem("hour8"));
-var event9 = JSON.parse(localStorage.getItem("hour9"));
-var event10 = JSON.parse(localStorage.getItem("hour10"));
-var event11 = JSON.parse(localStorage.getItem("hour11"));
-var event12 = JSON.parse(localStorage.getItem("hour12"));
-var event13 = JSON.parse(localStorage.getItem("hour13"));
-var event14 = JSON.parse(localStorage.getItem("hour14"));
-var event15 = JSON.parse(localStorage.getItem("hour15"));
-var event16 = JSON.parse(localStorage.getItem("hour16"));
-var event17 = JSON.parse(localStorage.getItem("hour17"));
+var event8 = JSON.parse(localStorage.getItem("hour8")) || "";
+var event9 = JSON.parse(localStorage.getItem("hour9")) || "";
+var event10 = JSON.parse(localStorage.getItem("hour10")) || "";
+var event11 = JSON.parse(localStorage.getItem("hour11")) || "";
+var event12 = JSON.parse(localStorage.getItem("hour12")) || "";
+var event13 = JSON.parse(localStorage.getItem("hour13")) || "";
+var event14 = JSON.parse(localStorage.getItem("hour14")) || "";
+var event15 = JSON.parse(localStorage.getItem("hour15")) || "";
+var event16 = JSON.parse(localStorage.getItem("hour16")) || "";
+var event17 = JSON.parse(localStorage.getItem("hour17")) || "";
 
 //Insert the above events into the local storage 
 
 $.each(hours, function(index,value){
     events = [event8, event9, event10, event11, event12, event13, event14, event15, event16, event17]
-    $(".container").append("<div class='row'><div class='col-2 hour text-right' id='hour'"+
-    (index + 8) + "'><span>" + value.format("h A") + "</span></div><div class='col-8 event-group' id='text-block'"+
-    (index + 8) + "'><textarea class='events col-12' id='event-block'" + (index + 8) + "'>" + events[index] + "</textarea></div>" + 
-    "<div class='col-2 save-delete' id='save-delete'" + (index + 9) + "'><i class='fas fa-save' title='Save Event'></i> <i class='fas fa-trash' title='Remove Event'></i></div></div></div>");
+    $(".container").append("<div class='row'><div class='col-2 hour text-right' id='hour" +
+    (index + 8) + "'><span>" + value.format("h A") + "</span></div><div class='col-8 event-group' id='time-block"+
+    (index + 8) + "'><textarea class='events col-12' id='event-block" + (index + 8) + "'>" + events[index] + "</textarea></div>" + 
+    "<div class='col-2 save-delete' id='save-delete" + (index + 8) + "'><i class='fas fa-save' title='Save Task'></i> <i class='fas fa-trash' title='Delete Task'></i></div></div></div>");
 });
 
 
@@ -71,7 +71,7 @@ var checkTime = function(){
     if (moment().isBetween(hour10, hour11)){
         $("#time-block10").addClass("present");
     }
-    else if(momen11().isAfter(hour11)){
+    else if(moment().isAfter(hour11)){
         $("time-block10").addClass("past");
     }
     else {
@@ -155,8 +155,8 @@ $("#save-delete9").on("click", "i.fa-trash", function(){
 })
 
 $("#save-delete10").on("click", "i.fa-trash", function(){
-    localStorage.removeItem("hour10"11;
-    $("#event-block10").val("")11
+    localStorage.removeItem("hour10");
+    $("#event-block10").val("");
 })
 
 $("#save-delete11").on("click", "i.fa-trash", function(){
@@ -194,4 +194,47 @@ $("#save-delete17").on("click", "i.fa-trash", function(){
     $("#event-block17").val("");
 })
 
+
 //Save Event Function
+$("#save-delete8").on("click", "i.fa-save", function(){
+    var event8 = $("#eventblock8").val().trim();
+    localStorage.setItem("hour8", JSON.stringify(event8));
+})
+$("#save-delete9").on("click", "i.fa-save", function(){
+    var event9 = $("#event-block9").val().trim();
+    localStorage.setItem("hour9", JSON.stringify(event9));
+})
+$("#save-delete10").on("click", "i.fa-save", function(){
+    var event10 = $("#event-block10").val().trim();
+    localStorage.setItem("hour10", JSON.stringify(event10));
+})
+$("#save-delete11").on("click", "i.fa-save", function(){
+    var event11 = $("#event-block11").val().trim();
+    localStorage.setItem("hour11", JSON.stringify(event11));
+})
+$("#save-delete12").on("click", "i.fa-save", function(){
+    var event12 = $("#event-block12").val().trim();
+    localStorage.setItem("hour12", JSON.stringify(event12));
+})
+$("#save-delete13").on("click", "i.fa-save", function(){
+    var event13 = $("#event-block13").val().trim();
+    localStorage.setItem("hour13", JSON.stringify(event13));
+})
+$("#save-delete14").on("click", "i.fa-save", function(){
+    var event14 = $("#event-block14").val().trim();
+    localStorage.setItem("hour14", JSON.stringify(event14));
+})
+$("#save-delete15").on("click", "i.fa-save", function(){
+    var event15 = $("#event-block15").val().trim();
+    localStorage.setItem("hour15", JSON.stringify(event15));
+})
+$("#save-delete16").on("click", "i.fa-save", function(){
+    var event16 = $("#event-block16").val().trim();
+    localStorage.setItem("hour16", JSON.stringify(event16));
+})
+setInterval(function(){
+    $(".event-group.events").each(function(index,el){
+        checkTime(el);
+    });
+}, (1000*60));
+checkTime(); 

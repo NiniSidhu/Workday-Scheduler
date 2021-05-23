@@ -1,9 +1,9 @@
 # Workday-Scheduler
 ## Created by: Nayandeep Sidhu 
 
-###Deploy Link: 
+##Deploy Link: 
 
-###Overview: A simple task manager that lets you Save and Delete your tasks for the day. Past tasks are highlighted in Grey, Present in Red and Future in Green. 
+##Overview: A simple task manager that lets you Save and Delete your tasks for the day. Past tasks are highlighted in Grey, Present in Red and Future in Green. 
 
 1) The user is greeted with the main screen 
 ![image](https://user-images.githubusercontent.com/79432326/119249624-0207f180-bb68-11eb-90d5-b576a6a7868d.png)

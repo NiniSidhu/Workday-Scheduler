@@ -12,7 +12,7 @@
 3) The user can edit a task for a given time by simply clicking on the text box and then clicking on the save button located on the right side. 
 ![image](https://user-images.githubusercontent.com/79432326/119271194-81301080-bbce-11eb-8cf7-b37d4c332fb4.png)
 
-5) The save icons changes color when user hovers over it 
+4) The save icons changes color when user hovers over it 
 ![image](https://user-images.githubusercontent.com/79432326/119271139-3f9f6580-bbce-11eb-82f2-8ff5039760cb.png)
 
 5) The user can delete a tast for a given time as well by simply clicking on the trash icon. The icon changes its size and color when the user hovers over it to avoid accidental deletion of tasks. 
